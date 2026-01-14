@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import PersistentDrawerLeft from "./layout/DrawerLeft";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       >
         {/* <Header /> */}
         <PersistentDrawerLeft />
+        <AppRoutes/>
       </Box>
     </>
   );

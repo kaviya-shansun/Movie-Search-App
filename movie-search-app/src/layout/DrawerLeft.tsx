@@ -21,6 +21,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AppBar from "./AppBar";
 import MainBar from "./MainBar";
 import { Person3 } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 220;
 
@@ -51,6 +52,17 @@ export default function PersistentDrawerLeft() {
     }));
   };
 
+  const menuItems = [
+  { label: "Home", path: "/" },
+  { label: "Discover", path: "/discover" },
+  { label: "Genre", path: "/genre" }
+];
+  const GeneralItems = [
+  { label: "Settings", path: "/setting"},
+  { label: "Help", path: "/help"}
+];
+
+const navigate = useNavigate();
   return (
     <>
       <MainBar />
@@ -122,14 +134,14 @@ export default function PersistentDrawerLeft() {
               />
             </div>
             {expanded.menu &&
-              ["Home", "Discover", "Genre", "Watchlist"].map((text, index) => (
-                <ListItem key={text} disablePadding>
-                  <ListItemButton>
+              menuItems.map((item, index) => (
+                <ListItem key={item.label} disablePadding>
+                  <ListItemButton onClick={()=>navigate(item.path)}>
                     <ListItemIcon>
                       {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                     </ListItemIcon>
                     <ListItemText
-                      primary={text}
+                      primary={item.label}
                       primaryTypographyProps={{
                         fontSize: "14px",
                         fontWeight: 500,
@@ -157,18 +169,18 @@ export default function PersistentDrawerLeft() {
               />
             </div>
             {expanded.general &&
-              ["settings", "Help"].map((text, index) => (
+              GeneralItems.map((item, index) => (
                 <ListItem
-                  key={text}
+                  key={item.label}
                   disablePadding
                   sx={{ fontFamily: "Montserrat" }}
                 >
-                  <ListItemButton>
+                  <ListItemButton onClick={()=>navigate(item.path)}>
                     <ListItemIcon>
                       {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                     </ListItemIcon>
                     <ListItemText
-                      primary={text}
+                      primary={item.label}
                       primaryTypographyProps={{
                         fontSize: "14px",
                         fontWeight: 500,
