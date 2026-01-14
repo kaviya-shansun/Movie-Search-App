@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import Header from "./components/Header";
+import PersistentDrawerLeft from "./layout/DrawerLeft";
 
 function App() {
   return (
@@ -11,7 +11,8 @@ function App() {
           color: "text.primary",
         }}
       >
-        <Header />
+        {/* <Header /> */}
+        <PersistentDrawerLeft />
       </Box>
     </>
   );

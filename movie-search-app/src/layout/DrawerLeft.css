@@ -1,0 +1,17 @@
+.NestHeading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:6px;
+    cursor: pointer;
+}
+.NestHeading:hover{
+    background-color: #f5f3f3;
+    outline: none;
+}
+.NestTitle{
+    padding:10px
+}
+.ManualFont{
+  font-family: "Montserrat", sans-serif;
+}
