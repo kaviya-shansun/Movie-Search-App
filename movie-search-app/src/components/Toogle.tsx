@@ -17,11 +17,9 @@ const Toggle = () => {
         className="toggleDesign"
         sx={{ display: "flex", alignItems: "center", gap: 1 }}
       >
-        <div>Light</div>
 
         <Switch checked={mode === "dark"} onChange={handleChange} />
 
-        <div>Dark</div>
       </Box>
     </>
   );
